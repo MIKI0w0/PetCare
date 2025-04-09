@@ -1,16 +1,15 @@
-﻿namespace PetCare.API.Models
+﻿using PetCare.API.Models;
+
+public class Cita
 {
-    public class Cita
-    {
-        public int IdCita { get; set; }
-        public DateTime FechaHora { get; set; }
+    public int IdCita { get; set; }
+    public DateTime FechaHora { get; set; }
 
-        public int IdMascota { get; set; }
-        public Mascota Mascota { get; set; } = null!;
+    public int IdMascota { get; set; }
+    public Mascota Mascota { get; set; }
 
-        public int IdServicio { get; set; }
-        public Servicio Servicio { get; set; } = null!;
+    public int IdServicio { get; set; }
+    public Servicio Servicio { get; set; }
 
-        public List<CitaProducto> ProductosUtilizados { get; set; } = new List<CitaProducto>();
-    }
+    public ICollection<CitaProducto> ProductosUtilizados { get; set; }
 }
